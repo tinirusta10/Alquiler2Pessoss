@@ -2,6 +2,12 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
+
+//HOOLAAAAA
+
+//que pasaaa
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
