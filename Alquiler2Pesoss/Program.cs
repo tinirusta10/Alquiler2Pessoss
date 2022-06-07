@@ -10,9 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-var conn = builder.Configuration.GetConnectionString("conn");
-builder.Services.AddDbContext<dbcontext>(opciones =>
-    opciones.UseSqlServer(conn));
+builder.Services.AddDbContext<dbcontext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
 
 });
 //prueba 232323

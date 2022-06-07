@@ -8,11 +8,15 @@ namespace Alquiler2Pesoss.Data
         public dbcontext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet <Producto> productoss { get; set; }
 
-        public DbSet <Persona> persona { get; set; }
+        public DbSet<Persona> personaEnt { get; set; }
 
-        
+        public DbSet<Producto> productoEnt { get; set; }
+
+
+
+
+
 
     }
 }
