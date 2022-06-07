@@ -33,7 +33,7 @@ namespace Alquiler2Pesoss.Migrations
                     Altura = table.Column<int>(type: "int", maxLength: 6, nullable: false),
                     CP = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Referencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "datetime2", maxLength: 8, nullable: false)
+                    
                 },
                 constraints: table =>
                 {

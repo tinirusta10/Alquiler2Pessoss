@@ -88,9 +88,7 @@ namespace Alquiler2Pesoss.Entidades
 
 
 
-        [Required]
-        [MaxLength(8, ErrorMessage = " La Fecha de nacimiento no debe superar los 8 caracteres")]
-        public DateTime FechaNacimiento { get; set; }
+
 
 
 
