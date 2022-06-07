@@ -1,16 +1,15 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Alquiler2Pesoss.Migrations
 {
-    public partial class Personatabla : Migration
+    public partial class TablaPersonas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "personaEnt",
+                name: "PersonaEnt",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -25,24 +24,23 @@ namespace Alquiler2Pesoss.Migrations
                     TipoDocumento = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
                     Provincia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Barrio = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Piso = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    Piso = table.Column<int>(type: "int", maxLength: 5, nullable: false),
                     Departamento = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     calle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Depto = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Localidad = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Altura = table.Column<int>(type: "int", maxLength: 6, nullable: false),
                     CP = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
-                    Referencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    
+                    Referencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_personaEnt", x => x.Id);
+                    table.PrimaryKey("PK_PersonaEnt", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "personassDNI_UQ",
-                table: "personaEnt",
+                table: "PersonaEnt",
                 column: "DNI",
                 unique: true);
         }
@@ -50,7 +48,7 @@ namespace Alquiler2Pesoss.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "personaEnt");
+                name: "PersonaEnt");
         }
     }
 }

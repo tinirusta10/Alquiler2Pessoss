@@ -55,7 +55,7 @@ namespace Alquiler2Pesoss.Entidades
         public string Barrio { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(5)]
         public int Piso { get; set; }
 
         [Required]
