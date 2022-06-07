@@ -2,6 +2,12 @@ using Alquiler2Pesoss.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
+
+//HOOLAAAAA
+
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
