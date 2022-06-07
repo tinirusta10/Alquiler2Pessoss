@@ -16,14 +16,6 @@ builder.Services.AddDbContext<dbcontext>(opciones =>
 
 var app = builder.Build();
 
-//Prubea Jose 12
-bool algo = true;
-if (algo == true)
-{
-
-    algo = false;
-}
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
