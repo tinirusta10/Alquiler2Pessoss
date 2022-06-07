@@ -14,7 +14,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 
 });
-
+//holaaa
 var app = builder.Build();
 
 
