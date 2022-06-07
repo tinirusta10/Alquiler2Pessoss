@@ -15,7 +15,7 @@ builder.Services.AddDbContext<dbcontext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
 
 });
-//prueba 232323
+//prueba Final definitiva
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
