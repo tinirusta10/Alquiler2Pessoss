@@ -9,7 +9,17 @@ namespace Alquiler2Pesoss.Entidades
 
         public string Nombre { get; set; }
 
+        public int Precio { get; set; }
 
+        public string Detalles { get; set; }
+
+        public string Foto { get; set; }
+
+        public string UsuarioDueño { get; set; }
+
+        public DateTime FechaPublicacion { get; set; }
+
+       
 
 
     }
