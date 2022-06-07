@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Alquiler2Pesoss.Entidades
 {
 
-[Index(nameof(Id), Name = " Codigo_UNQ", IsUnique = true)]
+
 
 
 public class Producto
