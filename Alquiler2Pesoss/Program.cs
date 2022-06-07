@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components.Web;
 
 //HOOLAAAAA
 
-
+//que pasaaa
 
 
 var builder = WebApplication.CreateBuilder(args);
