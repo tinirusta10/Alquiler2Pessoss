@@ -9,9 +9,9 @@ namespace Alquiler2Pesoss.Data
         {
         }
 
-        public DbSet<Persona> PersonaEnt { get; set; }
+        public DbSet<Persona> TablaPersona { get; set; }
 
-        public DbSet<Producto> ProductoEnt { get; set; }
+        public DbSet<Producto> TablaProducto  { get; set; }
 
 
 

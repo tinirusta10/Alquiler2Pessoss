@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Alquiler2Pesoss.Migrations
 {
     [DbContext(typeof(dbcontext))]
-    [Migration("20220607200302_TablaPersonas")]
-    partial class TablaPersonas
+    [Migration("20220607203351_tablapersona")]
+    partial class tablapersona
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,10 +45,9 @@ namespace Alquiler2Pesoss.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("CP")
-                        .IsRequired()
+                    b.Property<int>("CP")
                         .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Contraseña")
                         .IsRequired()
@@ -59,20 +58,30 @@ namespace Alquiler2Pesoss.Migrations
                         .HasMaxLength(8)
                         .HasColumnType("int");
 
-                    b.Property<string>("Departamento")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
                     b.Property<string>("Depto")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("Localidad")
+                    b.Property<string>("IdDepartamento")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("IdLocalidad")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
+
+                    b.Property<string>("IdProvincia")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("IdTipoDocumento")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
 
                     b.Property<string>("Mail")
                         .IsRequired()
@@ -92,11 +101,6 @@ namespace Alquiler2Pesoss.Migrations
                         .HasMaxLength(5)
                         .HasColumnType("int");
 
-                    b.Property<string>("Provincia")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Referencia")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -106,11 +110,6 @@ namespace Alquiler2Pesoss.Migrations
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("TipoDocumento")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
 
                     b.Property<string>("calle")
                         .IsRequired()
@@ -122,7 +121,7 @@ namespace Alquiler2Pesoss.Migrations
                     b.HasIndex(new[] { "DNI" }, "personassDNI_UQ")
                         .IsUnique();
 
-                    b.ToTable("PersonaEnt");
+                    b.ToTable("TablaPersona");
                 });
 #pragma warning restore 612, 618
         }

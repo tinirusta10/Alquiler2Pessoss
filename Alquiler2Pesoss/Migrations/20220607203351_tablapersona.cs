@@ -4,12 +4,12 @@
 
 namespace Alquiler2Pesoss.Migrations
 {
-    public partial class TablaPersonas : Migration
+    public partial class tablapersona : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PersonaEnt",
+                name: "TablaPersona",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,26 +21,26 @@ namespace Alquiler2Pesoss.Migrations
                     RepetirContraseña = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Mail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     NumeroTelefono = table.Column<int>(type: "int", maxLength: 20, nullable: false),
-                    TipoDocumento = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
-                    Provincia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    IdTipoDocumento = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
+                    IdProvincia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Barrio = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Piso = table.Column<int>(type: "int", maxLength: 5, nullable: false),
-                    Departamento = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    IdDepartamento = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     calle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Depto = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Localidad = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    IdLocalidad = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Altura = table.Column<int>(type: "int", maxLength: 6, nullable: false),
-                    CP = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    CP = table.Column<int>(type: "int", maxLength: 25, nullable: false),
                     Referencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PersonaEnt", x => x.Id);
+                    table.PrimaryKey("PK_TablaPersona", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "personassDNI_UQ",
-                table: "PersonaEnt",
+                table: "TablaPersona",
                 column: "DNI",
                 unique: true);
         }
@@ -48,7 +48,7 @@ namespace Alquiler2Pesoss.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PersonaEnt");
+                name: "TablaPersona");
         }
     }
 }

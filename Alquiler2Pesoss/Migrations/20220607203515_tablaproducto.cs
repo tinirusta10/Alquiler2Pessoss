@@ -4,12 +4,12 @@
 
 namespace Alquiler2Pesoss.Migrations
 {
-    public partial class TablaProductos : Migration
+    public partial class tablaproducto : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ProductoEnt",
+                name: "TablaProducto",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", maxLength: 10, nullable: false)
@@ -21,14 +21,14 @@ namespace Alquiler2Pesoss.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductoEnt", x => x.Id);
+                    table.PrimaryKey("PK_TablaProducto", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductoEnt");
+                name: "TablaProducto");
         }
     }
 }

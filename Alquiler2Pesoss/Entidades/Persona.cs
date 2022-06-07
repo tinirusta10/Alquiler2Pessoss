@@ -44,11 +44,11 @@ namespace Alquiler2Pesoss.Entidades
 
         [Required]
         [MaxLength(4, ErrorMessage = "Tipo de documento incorrecto")]
-        public string TipoDocumento { get; set; }
+        public string IdTipoDocumento { get; set; }
 
         [Required]
         [MaxLength(50)]
-        public string Provincia { get; set; }
+        public string IdProvincia { get; set; }
 
         [Required]
         [MaxLength(30)]
@@ -60,7 +60,7 @@ namespace Alquiler2Pesoss.Entidades
 
         [Required]
         [MaxLength(30)]
-        public string Departamento { get; set; }
+        public string IdDepartamento { get; set; }
 
         [Required]
         [MaxLength(30)]
@@ -72,7 +72,7 @@ namespace Alquiler2Pesoss.Entidades
 
         [Required]
         [MaxLength(25)]
-        public string Localidad { get; set; }
+        public string IdLocalidad { get; set; }
 
         [Required]
         [MaxLength(6)]
@@ -80,7 +80,7 @@ namespace Alquiler2Pesoss.Entidades
 
         [Required]
         [MaxLength(25)]
-        public string CP { get; set; }
+        public int CP { get; set; }
 
         [Required]
         [MaxLength(50)]
