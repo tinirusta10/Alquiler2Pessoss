@@ -6,7 +6,7 @@ namespace Alquiler2Pesoss.Entidades
 {
     public class Localidad
     {
-
+                                            
         public int Id { get; set; }
         public string NombreLocalidad { get; set; }
 
