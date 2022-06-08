@@ -13,6 +13,13 @@ namespace Alquiler2Pesoss.Data
 
         public DbSet<Producto> TablaProducto  { get; set; }
 
+        public DbSet <Provincia> TablaProvincia { get; set; }
+
+        public DbSet<Departamento> TablaDepartamento { get; set; }
+
+        public DbSet<TipoDocumento> TablaTipoDocumento { get; set; }
+
+        public DbSet<Localidad> TablaLocalidad { get; set; }
 
 
 
