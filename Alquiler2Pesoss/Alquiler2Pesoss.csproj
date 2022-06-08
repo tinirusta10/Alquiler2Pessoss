@@ -18,6 +18,13 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Servicios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorCRUD.Data.Dapper\BlazorCRUD.Data.Dapper.csproj" />
+    <ProjectReference Include="..\BlazorCRUD.Model\BlazorCRUD.Model.csproj" />
   </ItemGroup>
 
 </Project>
