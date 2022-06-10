@@ -1,55 +1,33 @@
 ﻿@page "/registrarproducto"
-@using BlazorCRUD.Model
-
-
-
-
-<EditForm Model="@film">
-    <table class="table">
-        <td style="text-align:right">
-        <h1>Registrar producto</h1>
-
-        </td>
-        
-
-        <tr>
-            <td>Nombre del producto</td>
-            <td><input type="text" @bind="film.nombre_producto" /> </td>
-        </tr>
-
-        <tr>
-            <td>Precio del producto</td>
-            <td><input type="text" @bind="film.precio_producto" /> </td>
-        </tr>
-
-        <tr>
-            <td>Descripcion producto</td>
-            <td><input type="text" @bind="film.descripcion_producto" /> </td>
-        </tr>
-
-        <tr>
-            
-
-            <td colspan="2" style="text-align:center">
-                <input type="submit" value="Alquilar"/>
-                </td>
-        </tr>
+@using Entidades
 
 
 
 
 
-    </table>
+<EditForm Model="producto" OnSubmit="Enviar">
+    <InputText id="nombre" @bind-Value="producto.NombreProducto"/>
+   
+    <button type="submit">Enviar</button>
+    
+
+
+ 
 
 
 
-
+   
 
 
 </EditForm>
 
-@code {
-    Film film = new Film();
+@code{
+    private Producto producto { get; set; } = new Producto();
 
+
+    private void Enviar()
+    {
+        string nombre = producto.NombreProducto;
+    }
 
 }
