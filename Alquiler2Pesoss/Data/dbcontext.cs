@@ -11,7 +11,7 @@ namespace Alquiler2Pesoss.Data
 
         public DbSet<Persona> TablaPersona { get; set; }
 
-        public DbSet<Producto> TablaProducto  { get; set; }
+        public DbSet<Producto> TablaPrpducto { get; set; }
 
         public DbSet <Provincia> TablaProvincia { get; set; }
 

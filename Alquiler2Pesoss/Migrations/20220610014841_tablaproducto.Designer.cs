@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Alquiler2Pesoss.Migrations
 {
     [DbContext(typeof(dbcontext))]
-    [Migration("20220608005425_Tablas")]
-    partial class Tablas
+    [Migration("20220610014841_tablaproducto")]
+    partial class tablaproducto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -180,13 +180,13 @@ namespace Alquiler2Pesoss.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("PrecioProducto")
+                    b.Property<float>("PrecioProducto")
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
-                    b.ToTable("TablaProducto");
+                    b.ToTable("TablaPrpducto");
                 });
 
             modelBuilder.Entity("Alquiler2Pesoss.Entidades.Provincia", b =>

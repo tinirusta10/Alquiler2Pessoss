@@ -178,13 +178,13 @@ namespace Alquiler2Pesoss.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int>("PrecioProducto")
+                    b.Property<float>("PrecioProducto")
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
-                    b.ToTable("TablaProducto");
+                    b.ToTable("TablaPrpducto");
                 });
 
             modelBuilder.Entity("Alquiler2Pesoss.Entidades.Provincia", b =>
