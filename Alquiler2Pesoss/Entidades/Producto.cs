@@ -23,7 +23,7 @@ public class Producto
 
         [Required]
         [MaxLength(20)]
-        public int PrecioProducto { get; set; }
+        public float PrecioProducto { get; set; }
         
 
         [Required]
