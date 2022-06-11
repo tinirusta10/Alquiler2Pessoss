@@ -18,7 +18,6 @@ namespace Alquiler2Pesoss.Controller
             Context = context;
         }
 
-
         [HttpPost]
         public async Task<ActionResult<List<Producto>>> addVenta(Producto productos)
         {
@@ -29,6 +28,26 @@ namespace Alquiler2Pesoss.Controller
 
 
         }
+
+
+        //[HttpPut("{Id}")]
+        //public async Task<ActionResult<List<Producto>>> VentaActualizada(Producto request)
+        //{
+        //    var dbalquiler = await Context.TablaPrpducto.FindAsync(request.Id);
+
+        //    if (dbalquiler == null)
+        //        return BadRequest("venta no encontrada");
+
+
+        //    dbalquiler.NombreProducto = request.NombreProducto;
+        //    dbalquiler.PrecioProducto = request.PrecioProducto;
+        //    dbalquiler.DetallesProducto = request.DetallesProducto;
+        //    dbalquiler.FotoProducto = request.FotoProducto;
+
+        //    await Context.SaveChangesAsync();
+
+        //    return Ok(await Context.TablaPrpducto.ToListAsync());
+        //}
 
 
 
