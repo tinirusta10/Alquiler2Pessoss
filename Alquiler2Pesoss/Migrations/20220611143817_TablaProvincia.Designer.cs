@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Alquiler2Pesoss.Migrations
 {
     [DbContext(typeof(dbcontext))]
-    [Migration("20220610172030_TablaProvincia")]
+    [Migration("20220611143817_TablaProvincia")]
     partial class TablaProvincia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
