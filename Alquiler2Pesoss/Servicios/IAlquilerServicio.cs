@@ -7,7 +7,18 @@ namespace Alquiler2Pesoss.Servicios
 
         List<Producto> Productos { get; set; }
 
-        
-      
+
+        Task GetProducto();
+
+
+
+       Task<Producto> GetSingleProducto(int id);
+
+        Task CreateProducto(Producto producto);
+
+        Task UpdateProducto (Producto producto);
+
+        Task DeleteProducto(int id);
+
     }
 }
