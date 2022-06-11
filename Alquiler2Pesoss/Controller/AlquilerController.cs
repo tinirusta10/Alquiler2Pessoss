@@ -28,26 +28,51 @@ namespace Alquiler2Pesoss.Controller
 
 
         }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<Producto>>> BorrarVenta(int id)
+        {
+            var dbventa = await Context.TablaPrpducto.FindAsync(id);
+            if (dbventa == null)
+                return BadRequest("Venta no encontrada");
+
+            Context.TablaPrpducto.Remove(dbventa);
+            await Context.SaveChangesAsync();
+
+            return Ok(await Context.TablaPrpducto.ToListAsync());
+        }
+
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<List<Producto>>> VentaActualizada(Producto request)
+        {
+            var dbalquiler = await Context.TablaPrpducto.FindAsync(request.Id);
+
+            if (dbalquiler == null)
+                return BadRequest("venta no encontrada");
 
 
-        //[HttpPut("{Id}")]
-        //public async Task<ActionResult<List<Producto>>> VentaActualizada(Producto request)
-        //{
-        //    var dbalquiler = await Context.TablaPrpducto.FindAsync(request.Id);
+            dbalquiler.NombreProducto = request.NombreProducto;
+            dbalquiler.PrecioProducto = request.PrecioProducto;
+            dbalquiler.DetallesProducto = request.DetallesProducto;
+            dbalquiler.FotoProducto = request.FotoProducto;
 
-        //    if (dbalquiler == null)
-        //        return BadRequest("venta no encontrada");
+            await Context.SaveChangesAsync();
+
+            return Ok(await Context.TablaPrpducto.ToListAsync());
+        }
 
 
-        //    dbalquiler.NombreProducto = request.NombreProducto;
-        //    dbalquiler.PrecioProducto = request.PrecioProducto;
-        //    dbalquiler.DetallesProducto = request.DetallesProducto;
-        //    dbalquiler.FotoProducto = request.FotoProducto;
+        [HttpGet("{id}")]
 
-        //    await Context.SaveChangesAsync();
+        public async Task<ActionResult<Producto>> Get(int id)
+        {
+            var prod = await Context.TablaPrpducto.FindAsync(id);
+            if (prod == null)
+            {
+                return BadRequest("Venta no encontrada");
+            }
 
-        //    return Ok(await Context.TablaPrpducto.ToListAsync());
-        //}
+            return Ok(prod);
+        }
 
 
 
