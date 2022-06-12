@@ -6,15 +6,10 @@ namespace Alquiler2Pesoss.Servicios
     public class AlquilerServicio : IAlquilerServicio
     {
         private readonly HttpClient _http;
-        private readonly NavigationManager _navigationManager;
+  
 
-        public AlquilerServicio(HttpClient http NavigationManager navigationManager)
-        {
-            _http = http;
-            _navigationManager = navigationManager;
-        }
-        
-        
+
+
         public List<Producto> Productos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public async Task CreateProducto(Producto producto)
@@ -27,7 +22,7 @@ namespace Alquiler2Pesoss.Servicios
         {
             var response = await result.Content.ReadFromJsonAsync<List<Producto>>();
             Productos = response;
-            //_navigationManager.NavigateTo("producto");
+
         }
 
         public async Task DeleteProducto(int id)
