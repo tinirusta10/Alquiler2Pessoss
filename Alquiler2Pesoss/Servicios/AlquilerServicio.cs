@@ -8,7 +8,7 @@ namespace Alquiler2Pesoss.Servicios
         private readonly HttpClient _http;
         private readonly NavigationManager _navigationManager;
 
-        public AlquilerServicio(HttpClient http NavigationManager navigationManager)
+        public AlquilerServicio(HttpClient http ,NavigationManager navigationManager)
         {
             _http = http;
             _navigationManager = navigationManager;
