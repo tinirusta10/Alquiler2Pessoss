@@ -5,11 +5,28 @@
 
 
 
-<EditForm Model="producto" OnSubmit="Enviar">
-    <InputText id="nombre" @bind-Value="producto.NombreProducto"/>
+<EditForm>
    
-    <button type="submit">Enviar</button>
-    
+     <h2 style="text-align:center">Registrar producto</h2>
+        
+
+        
+
+        <label for="fname">Nombre del producto</label>
+        <input type="text" @bind="film.NombreProducto" /><br /><br />
+       
+        
+        <label for="fname">Precio del producto</label>
+        <input type="text" @bind="film.PrecioProducto" /><br /><br />
+
+       
+        <label>Descripcion del producto</label>
+        <input type="text" @bind="film.DetallesProducto" /><br /><br />
+
+        
+        <h6 style="text-align:right">imagenes del producto</h6>
+        <input type="text" @bind="film.FotoProducto" /><br /><br />
+
 
 
  
@@ -22,12 +39,6 @@
 </EditForm>
 
 @code{
-    private Producto producto { get; set; } = new Producto();
-
-
-    private void Enviar()
-    {
-        string nombre = producto.NombreProducto;
-    }
+    
 
 }
