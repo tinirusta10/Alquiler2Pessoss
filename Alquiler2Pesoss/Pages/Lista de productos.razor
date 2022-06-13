@@ -1,0 +1,50 @@
+﻿@page "/listadeproductos"
+@using Entidades
+@using Servicios
+@inject IAlquilerServicio AlquilerServicio
+<PageTitle>Lista de productos alquilados</PageTitle>
+
+
+<h3>Lista de productos</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del producto</th>
+            <th>Precio del producto</th>
+            <th>Descripcion del producto</th>
+            <th>Imagen del producto</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+               @foreach (var producto in AlquilerServicio.Productos)
+        {
+            <tr>
+                <td>@producto.NombreProducto</td>
+                <td>@producto.PrecioProducto</td>
+                <td>@producto.DetallesProducto</td>
+                <td>@producto.FotoProducto</td>
+                <td>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        //await AlquilerServicio.GetProducto();
+    }   
+
+
+
+
+}

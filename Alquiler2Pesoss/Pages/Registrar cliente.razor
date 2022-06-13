@@ -1,0 +1,79 @@
+﻿@page "/Registrar cliente"
+
+@using Entidades
+<PageTitle>Registro del cliente</PageTitle>
+
+
+<h3>Registrar_cliente</h3>
+
+<EditForm Model="@cliente">
+     
+    
+    <label for="fname">Nombre</label>
+        <input type="text" @bind="cliente.Nombre" /><br /><br />
+
+
+          <label for="fname">Apellido</label>
+        <input type="text" @bind="cliente.Apellido" /><br /><br /> <br />
+
+
+          <label for="fname">Tipo de documento</label>
+        <input type="text" @bind="cliente.IdTipoDocumento" /><br /><br />
+
+
+        <label for="fname">Nº de documento</label>
+        <input type="text" @bind="cliente.DNI" /><br /><br /> <br />
+
+
+        <label>Medios de contacto</label><br /><br />
+
+        <label for="fname">Telefono</label>
+        <input type="text" @bind="cliente.NumeroTelefono" /><br /><br />
+
+         <label for="fname">Email</label>
+        <input type="text" @bind="cliente.Mail" /><br /><br />
+
+
+        <style>
+            .contenedor{
+                display:flex;
+                justify-content:center;
+
+            }
+
+            
+
+        </style>
+        
+        <body>
+            <div class="contenedor">
+                <h1>hola</h1>
+
+
+            </div>
+        </body>
+       
+
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+</EditForm>
+
+
+@code {
+
+
+    Persona cliente = new Persona();
+}

@@ -12,46 +12,66 @@ namespace Alquiler2Pesoss.Servicios
 
         public List<Producto> Productos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public async Task CreateProducto(Producto producto)
+        public async Task CrearProducto(Producto producto)
         {
-            var result = await _http.PostAsJsonAsync("api/producto", producto);
-            await SetProductos(result);
+            var resultado = await _http.PostAsJsonAsync("api/producto", producto);
+            await EstablecerProductos(resultado);
         }
 
-        private async Task SetProductos(HttpResponseMessage result)
+        private async Task EstablecerProductos(HttpResponseMessage resultado)
         {
-            var response = await result.Content.ReadFromJsonAsync<List<Producto>>();
+            var response = await resultado.Content.ReadFromJsonAsync<List<Producto>>();
             Productos = response;
 
         }
 
-        public async Task DeleteProducto(int id)
+        public async Task BorrarProducto(int id)
         {
-            var result = await _http.DeleteAsync($"api/producto{id}");
-             await SetProductos(result);
+            var resultado = await _http.DeleteAsync($"api/producto{id}");
+             await EstablecerProductos(resultado);
         }
 
 
-        public async Task<Producto> GetSingleProducto(int id)
+        public async Task<Producto> MostrarUnProducto(int id)
         {
-            var result = await _http.GetFromJsonAsync<Producto>($"api/producto/{id}");
-            if (result != null)
-                return result;
-            throw new  Exception("producto no funciona!");
+            var resultado = await _http.GetFromJsonAsync<Producto>($"api/producto/{id}");
+            if (resultado != null)
+                return resultado;
+            throw new  Exception("producto no encontrado!");
         }
 
 
-        public async Task GetProducto()
+        public async Task MostrarProductos()
         {
-            var result = await _http.GetFromJsonAsync<List<Producto>>($"api/producto");
-            if (result != null)
-            Productos = result;
+            var resultado = await _http.GetFromJsonAsync<List<Producto>>($"api/producto");
+            if (resultado != null)
+            Productos = resultado;
         }
 
-        public async Task UpdateProducto(Producto producto)
+        public async Task ActualizarProducto(Producto producto)
         {
-            var result = await _http.PutAsJsonAsync($"api/producto/{producto.Id}", producto);
-            await SetProductos(result);
+            var resultado = await _http.PutAsJsonAsync($"api/producto/{producto.Id}", producto);
+            await EstablecerProductos(resultado);
+        }
+
+        public Task GetProducto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Producto> GetSingleProducto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateProducto(Producto producto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateProducto(Producto producto)
+        {
+            throw new NotImplementedException();
         }
     }
     }

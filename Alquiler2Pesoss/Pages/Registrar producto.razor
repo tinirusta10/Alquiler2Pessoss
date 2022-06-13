@@ -1,35 +1,39 @@
-﻿@page "/registrarproducto"
+﻿@page "/"
 @using Entidades
 
 
 
 
 
-<EditForm>
+<EditForm Model="@producto">
    
      <h2 style="text-align:center">Registrar producto</h2>
         
-
-        
+     
+   
 
         <label for="fname">Nombre del producto</label>
-        <input type="text" @bind="film.NombreProducto" /><br /><br />
+        <input type="text" @bind="producto.NombreProducto" /><br /><br />
        
         
         <label for="fname">Precio del producto</label>
-        <input type="text" @bind="film.PrecioProducto" /><br /><br />
+        <input type="text" @bind="producto.PrecioProducto" /><br /><br />
 
-       
+  
         <label>Descripcion del producto</label>
-        <input type="text" @bind="film.DetallesProducto" /><br /><br />
-
-        
-        <h6 style="text-align:right">imagenes del producto</h6>
-        <input type="text" @bind="film.FotoProducto" /><br /><br />
+        <p><textarea name="comentario" rows="7" cols="70" @bind="producto.FotoProducto"></textarea></p>
 
 
+       <label>Imagen del producto</label>
+        <p><textarea name="comentario" rows="10" cols="100" @bind="producto.FotoProducto"></textarea></p>
 
- 
+        <td colspan="2" style="text-align:center">
+            <input type="submit" value="Alquilar" />
+        </td>
+
+
+
+
 
 
 
@@ -39,6 +43,6 @@
 </EditForm>
 
 @code{
-    
+    Producto producto = new Producto();
 
 }

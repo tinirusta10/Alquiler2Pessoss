@@ -19,7 +19,7 @@ namespace Alquiler2Pesoss.Controller
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<Producto>>> addVenta(Producto productos)
+        public async Task<ActionResult<List<Producto>>> addProducto(Producto productos)
         {
             Context.TablaPrpducto.Add(productos);
             await Context.SaveChangesAsync();
@@ -29,11 +29,11 @@ namespace Alquiler2Pesoss.Controller
 
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<List<Producto>>> BorrarVenta(int id)
+        public async Task<ActionResult<List<Producto>>> BorrarProducto(int id)
         {
             var dbventa = await Context.TablaPrpducto.FindAsync(id);
             if (dbventa == null)
-                return BadRequest("Venta no encontrada");
+                return BadRequest("producto no encontrado");
 
             Context.TablaPrpducto.Remove(dbventa);
             await Context.SaveChangesAsync();
@@ -42,12 +42,12 @@ namespace Alquiler2Pesoss.Controller
         }
 
         [HttpPut("{Id}")]
-        public async Task<ActionResult<List<Producto>>> VentaActualizada(Producto request)
+        public async Task<ActionResult<List<Producto>>> ActualizarProducto (Producto request)
         {
             var dbalquiler = await Context.TablaPrpducto.FindAsync(request.Id);
 
             if (dbalquiler == null)
-                return BadRequest("venta no encontrada");
+                return BadRequest("Producto no encontrado");
 
 
             dbalquiler.NombreProducto = request.NombreProducto;
@@ -68,7 +68,7 @@ namespace Alquiler2Pesoss.Controller
             var prod = await Context.TablaPrpducto.FindAsync(id);
             if (prod == null)
             {
-                return BadRequest("Venta no encontrada");
+                return BadRequest("Producto no encontrado");
             }
 
             return Ok(prod);
